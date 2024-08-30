@@ -1,15 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PiListThin } from "react-icons/pi";
 import { CiSearch } from "react-icons/ci";
 import { FaBell } from "react-icons/fa";
 import { BsCameraVideoFill } from "react-icons/bs";
 import { MdVideoLibrary } from "react-icons/md";
 
-const Header = () => {
+const Header = ({ setIsOpen }) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const value = e.target[0].value;
+    if (value.trim()) {
+      navigate(`/results?search_query=${value}`);
+    }
+  };
+
   return (
-    <header className="bg-black p-5 flex items-center justify-between">
+    <header className="p-5 flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <button className=" text-white text-2xl">
+        <button
+          className=" text-white text-2xl"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
           <PiListThin />
         </button>
         <Link to={"/"}>
@@ -55,10 +68,10 @@ const Header = () => {
         </Link>
       </div>
 
-      <form className="flex items-center">
+      <form className="flex items-center" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="bg-transparent border-[1px] rounded-3xl rounded-e-none outline-none p-1.5 text-white indent-2 border-white w-96"
+          className="bg-transparent border-[1px] rounded-3xl rounded-e-none outline-none p-1.5 text-white indent-2 border-white w-68 sm:w-80 md:w-96"
           placeholder="Search"
         />
         <button className="text-white border-[1px] border-l-0 p-1.5 px-5 rounded-e-3xl">
@@ -66,7 +79,7 @@ const Header = () => {
         </button>
       </form>
 
-      <div className="flex gap-4 text-white">
+      <div className="hidden md:flex gap-4 text-white">
         <FaBell className="size-5" />
         <BsCameraVideoFill className="size-5" />
         <MdVideoLibrary className="size-5" />

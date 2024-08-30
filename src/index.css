@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: black;
+  overflow: hidden;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  scroll-behavior: smooth !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background: gray;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  gap: 20px;
+}
+
+.video-detail {
+  display: grid;
+  grid-template-columns: auto 400px;
+  gap: 40px;
+  padding: 0px 60px;
+  overflow: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .video-detail {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}
+
+.subscribe-btn {
+  background-color: white;
+  color: black;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 168px auto;
+  gap: 20px;
+}
+
+input {
+  background-color: transparent;
+}
+
+.live {
+  background-color: rgb(220 38 38);
+}
+
+aside::-webkit-scrollbar {
+  width: 5px;
+}
+
+.divider {
+  background-color: white !important;
+}

@@ -2,7 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    colors: {
+      // kendi rengimizi ekliyoruz
+      gri: "#272727",
+    },
   },
   plugins: [],
 };
