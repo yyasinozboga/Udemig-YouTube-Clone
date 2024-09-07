@@ -1,6 +1,7 @@
 import millify from "millify";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 
 const Video = ({ video, isRow }) => {
   if (video.type !== "video") return;
@@ -16,8 +17,6 @@ const Video = ({ video, isRow }) => {
     video.channelThumbnail &&
     video.channelThumbnail.length > 0 &&
     video.channelThumbnail[0].url;
-
-  console.log(video);
 
   return (
     <Link
@@ -37,9 +36,12 @@ const Video = ({ video, isRow }) => {
       </figure>
 
       <div className="flex items-start gap-3">
-        {!isRow && (
-          <img src={channelSource} className="w-14 h-14 rounded-full" />
-        )}
+        {!isRow &&
+          (video.channelThumbnail === null ? (
+            <FaUserCircle className="text-[54px]" />
+          ) : (
+            <img src={channelSource} className="w-14 h-14 rounded-full" />
+          ))}
 
         <div>
           <p className="font-bold line-clamp-2">{video.title}</p>

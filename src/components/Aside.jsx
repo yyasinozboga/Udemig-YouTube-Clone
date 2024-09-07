@@ -6,7 +6,7 @@ const Aside = ({ isOpen }) => {
   const { isSelected, setIsSelected } = useContext(VideoContext);
 
   return (
-    <aside className="mr-3 h-[100vh] overflow-y-auto pr-2">
+    <aside className="mr-3 h-[100vh] overflow-y-auto pr-2 pb-5">
       {categories.map((category, index) => (
         <div key={index}>
           <div

@@ -51,6 +51,7 @@ body {
 .row {
   display: grid;
   grid-template-columns: 168px auto;
+  align-items: start;
   gap: 20px;
 }
 
@@ -68,4 +69,20 @@ aside::-webkit-scrollbar {
 
 .divider {
   background-color: white !important;
+}
+
+.gray {
+  color: #6b7280;
+}
+
+.bg-gray {
+  background-color: #6b7280;
+}
+
+.blue {
+  color: #3b82f6;
+}
+
+.row > div {
+  height: 100px;
 }

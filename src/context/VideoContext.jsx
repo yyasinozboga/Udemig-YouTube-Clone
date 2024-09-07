@@ -11,6 +11,7 @@ const VideoContextProvider = ({ children }) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
+    setIsLoading(true);
     if (isSelected.type === "menu") return;
 
     const url =

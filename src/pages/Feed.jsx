@@ -11,7 +11,7 @@ const Feed = ({ isOpen }) => {
   return (
     <div className="flex">
       <Aside isOpen={isOpen} />
-      <div className="videos pe-3">
+      <div className="videos pe-3 pb-24">
         {error ? (
           <Error />
         ) : isLoading ? (
