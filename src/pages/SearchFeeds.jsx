@@ -44,30 +44,6 @@ const SearchFeeds = () => {
       .finally(() => setSpinnerLoading(false));
   };
 
-  // useEffect(() => {
-  //   setPage(1);
-  // }, [query]);
-
-  // useEffect(() => {
-  //   let params = {
-  //     query,
-  //     type: "video",
-  //     token: page > 1 ? token : undefined,
-  //   };
-  //   api
-  //     .get("/search", { params })
-  //     .then((res) => {
-  //       setResults(
-  //         page === 1
-  //           ? res.data.data
-  //           : page > 1 && [...results, ...res.data.data]
-  //       );
-  //       setToken(res.data.continuation);
-  //     })
-  //     .catch((err) => console.log(err))
-  //     .finally(() => setIsLoading(false));
-  // }, [page]);
-
   return (
     <main className="px-5 sm:px-5 md:px-60 h-[90vh] overflow-y-auto flex flex-col">
       {isLoading ? (
